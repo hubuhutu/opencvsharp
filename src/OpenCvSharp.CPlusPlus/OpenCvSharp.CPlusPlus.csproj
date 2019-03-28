@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{524CC7B4-75B9-4925-9DA4-3DACD40F4814}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>OpenCvSharp.CPlusPlus</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\Blender.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\BundleAdjusterBase.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\CameraParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\ExposureCompensator.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\FeaturesFinder.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\FeaturesMatcher.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\SeamFinder.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\WarperCreator.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Detail\WaveCorrectKind.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\AutotunedIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\CompositeIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\FlannCentersInit.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\FlannDistance.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\Index.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\IndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\KDTreeIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\KMeansIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\LinearIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\SavedIndexParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Flann\SearchParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\CascadeClassifier_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\CudaMem.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\CudaMemAllocType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\Cv2Gpu.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\DescriptorFormat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\DeviceInfo.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\DisposableGpuObject.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\FAST_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\FeatureSet.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\GpuMat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\GpuMatIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\GpuMatRowColIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\HOGDescriptor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\MOG2_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\MOG_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\ORB_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\StereoBM_GPU.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\Stream.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\StreamCallback.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus.Gpu\StreamCallbackInternal.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Algorithm.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\AlgorithmInfo.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\AlgorithmParamType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BackgroundSubtractor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BackgroundSubtractorGMG.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BackgroundSubtractorMOG.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BackgroundSubtractorMOG2.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BFMatcher.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BoostSplitCriteria.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BoostType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BriefDescriptorExtractor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\BRISK.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CascadeClassifier.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CLAHE.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\ColorMapMode.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CppConst.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Cv2.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvAdaptiveSkinDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvANN_MLP.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvANN_MLP_TrainParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvBoost.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvBoostParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvBoostTree.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvCamShiftTracker.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvDTree.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvDTreeNode.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvDTreeParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvDTreeSplit.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvDTreeTrainData.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvERTrees.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvForestTree.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvKNearest.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvMLData.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvNormalBayesClassifier.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvParamGrid.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvRTParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvRTrees.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvStatModel.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvSVM.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvSVMParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\CvTrainTestSplit.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DctFlag2.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DenseFeatureDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DenseOpticalFlow.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DenseOpticalFlowExt.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DenseOpticalFlowExtImpl.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DenseOpticalFlowImpl.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DescriptorExtractor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DescriptorMatcher.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DetectionROI.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DftFlag2.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DistanceMaskSize.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DMatch.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DrawMatchesFlags.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DTreeDataLayout.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\DumpFormat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\EM.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\EMCovMatType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\EMStartStep.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\EnumerableEx.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FaceRecognizer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FastFeatureDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Feature2D.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FeatureDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FileNode.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FileStorage.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FindCirclesGridFlag.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FlannBasedMatcher.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FrameSource.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FrameSourceImpl.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\FREAK.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Func.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\GFTTDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\GrabCutFlag.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\HierarchyIndex.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\HistogramNormType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\HOGDescriptor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\IDescriptorExtractor.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\InOutArrayKind.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\InputArray.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\InputOutputArray.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\IStdVector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\IVec.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\KalmanFilter.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\KeyPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\LatentSvmDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Mat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatDiagType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatExpr.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatExprRangeIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatExprRowColIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfByte.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfByte3.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfDMatch.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfDouble.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfDouble3.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfFloat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfFloat4.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfFloat6.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfInt.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfInt4.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint2d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint3d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint3f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfPoint3i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfRect.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfShort.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatOfUShort.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatrixDecomposition.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatRowColExprIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatRowColIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MatType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MLPActivationFunc.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MLPTrainingFlag.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MLPTrainingMethod.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Moments.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MorphingMethod.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\MSER.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\NativeMethods.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\OpticalFlowFlags.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\ORB.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\ORBScore.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\OutputArray.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\OutputArrayOfMatList.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\OutputArrayOfStructList.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\PCA.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\PlatformUtil.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point2d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point3d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point3f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Point3i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\ProjectionType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Ptr.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Range.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Rangef.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Rect.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Rectf.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\RNG.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\RotatedRect.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Scalar.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SIFT.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SimilarRects.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SimpleBlobDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Size.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Size2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SolvePnPFlag.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SparseMat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SparseMatIndexer.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\StarDetector.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\StereoBM.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\StereoSGBM.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Stitcher.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\StructuringElementShape.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Subdiv2D.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SuperResolution.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SuperResolutionImpl.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SURF.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SVD.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SVMKernelType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SVMParamType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\SVMType.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\TermCriteria.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\TrainSamplePartMode.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2b.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2s.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec2w.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3b.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3s.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec3w.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4b.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4s.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec4w.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6b.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6s.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Vec6w.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfByte.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfDMatch.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfDouble.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfFloat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfInt32.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfKeyPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfMat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfPoint2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfPoint3f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfRect.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfString.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec3f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec4f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec4i.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec6d.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVec6f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorDMatch.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorDouble.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorFloat.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorKeyPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorPoint.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VectorOfVectorPoint2f.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VideoCapture.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\VideoWriter.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\WCvANN_MLP_TrainParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\WCvDTreeNode.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\WCvDTreeSplit.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\WCvSVMParams.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Window.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenCvSharp\OpenCvSharp.csproj">
+      <Project>{4c2356b8-1a1e-4f92-a51c-a49ca116867f}</Project>
+      <Name>OpenCvSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

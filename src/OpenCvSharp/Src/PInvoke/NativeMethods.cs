@@ -37,10 +37,10 @@ namespace OpenCvSharp
 
         #region DLL File Name
         
-        public const string Version = "2410";
+        public const string Version = "2413";
 
-        public const string DllMsvcr = "msvcr120";
-        public const string DllMsvcp = "msvcp120";
+        public const string DllMsvcr = "msvcr100";
+        public const string DllMsvcp = "msvcp100";
 
         public const string DllCalib3d = "opencv_calib3d" + Version;
         public const string DllCore = "opencv_core" + Version;

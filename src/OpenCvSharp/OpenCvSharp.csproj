@@ -114,7 +114,6 @@
     <Compile Include="Src\PInvoke\PInvokeHelper.cs" />
     <Compile Include="Src\PInvoke\Cv64suf.cs" />
     <Compile Include="Src\PInvoke\CvConst.cs" />
-    <Compile Include="Src\CvArr\CvArr_Methods.cs" />
     <Compile Include="Src\Delegate\CvIsInstanceFunc.cs" />
     <Compile Include="Src\Delegate\CvReleaseFunc.cs" />
     <Compile Include="Src\Delegate\CvReadFunc.cs" />
@@ -254,7 +253,6 @@
     <Compile Include="Src\CvArr\CvMat.cs" />
     <Compile Include="Src\Class\CvMemStorage.cs" />
     <Compile Include="Src\CvArr\CvMatND.cs" />
-    <Compile Include="Src\CvArr\CvSeqT.cs" />
     <Compile Include="Src\CvArr\CvSet.cs" />
     <Compile Include="Src\Class\CvSeqReaderT.cs" />
     <Compile Include="Src\CvArr\CvSparseMat.cs" />

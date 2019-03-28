@@ -111,3 +111,5 @@ UpgradeLog*.XML
 Help JP
 Help EN
 /src/*.opendb
+/src/.vs/OpenCvSharp2/v15/Server/sqlite3
+/src/.vs/OpenCvSharp2/v15
