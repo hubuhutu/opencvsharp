@@ -84,11 +84,11 @@ namespace OpenCvSharp.CPlusPlus
 
 		public static readonly MatType CV_64FC4 = CV_64FC(4);
 
-		public int Depth => Value & 7;
+		public int Depth {get{return Value & 7;}}
 
-		public bool IsInteger => Depth < 5;
+		public bool IsInteger {get{return Depth < 5;}}
 
-		public int Channels => (Value >> 3) + 1;
+        public int Channels { get { return (Value >> 3) + 1; } }
 
 		public MatType(int value)
 		{

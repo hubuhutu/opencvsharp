@@ -244,7 +244,7 @@ namespace OpenCvSharp
 			}
 		}
 
-		public override int Dims => 2;
+        public override int Dims { get { return 2; } }
 
 		public new double this[int row, int col]
 		{

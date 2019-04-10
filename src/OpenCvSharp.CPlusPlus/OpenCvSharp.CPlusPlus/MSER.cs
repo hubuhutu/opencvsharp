@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<MSER> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_MSER_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_MSER_info(ptr); } }
 
 		public MSER(int delta = 5, int minArea = 60, int maxArea = 14400, double maxVariation = 0.25, double minDiversity = 0.2, int maxEvolution = 200, double areaThreshold = 1.01, double minMargin = 0.003, int edgeBlurSize = 5)
 		{
@@ -72,7 +72,8 @@ namespace OpenCvSharp.CPlusPlus
 				throw new ArgumentNullException("image");
 			}
 			image.ThrowIfDisposed();
-			NativeMethods.features2d_MSER_detect(ptr, image.CvPtr, out IntPtr msers, Cv2.ToPtr(mask));
+            IntPtr msers;
+            NativeMethods.features2d_MSER_detect(ptr, image.CvPtr, out msers, Cv2.ToPtr(mask));
 			using (VectorOfVectorPoint vectorOfVectorPoint = new VectorOfVectorPoint(msers))
 			{
 				return vectorOfVectorPoint.ToArray();

@@ -7,9 +7,9 @@ namespace OpenCvSharp
 	{
 		public new static readonly int SizeOf = Marshal.SizeOf(typeof(WCvContour));
 
-		public unsafe CvRect Rect => ((WCvContour*)(void*)ptr)->rect;
+		public unsafe CvRect Rect { get { return  ((WCvContour*)(void*)ptr)->rect;}}
 
-		public unsafe int Color => ((WCvContour*)(void*)ptr)->color;
+        public unsafe int Color { get { return ((WCvContour*)(void*)ptr)->color; } }
 
 		public CvContour(IntPtr ptr)
 			: base(ptr)

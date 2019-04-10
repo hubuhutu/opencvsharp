@@ -146,7 +146,8 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				throw new ObjectDisposedException("Subdiv2D", "");
 			}
-			NativeMethods.imgproc_Subdiv2D_getEdgeList(ptr, out IntPtr edgeList);
+            IntPtr edgeList;
+			NativeMethods.imgproc_Subdiv2D_getEdgeList(ptr, out  edgeList);
 			using (VectorOfVec4f vectorOfVec4f = new VectorOfVec4f(edgeList))
 			{
 				return vectorOfVec4f.ToArray();
@@ -159,7 +160,8 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				throw new ObjectDisposedException("Subdiv2D", "");
 			}
-			NativeMethods.imgproc_Subdiv2D_getTriangleList(ptr, out IntPtr triangleList);
+            IntPtr triangleList;
+            NativeMethods.imgproc_Subdiv2D_getTriangleList(ptr, out triangleList);
 			using (VectorOfVec6f vectorOfVec6f = new VectorOfVec6f(triangleList))
 			{
 				return vectorOfVec6f.ToArray();

@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<BFMatcher> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_BFMatcher_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_BFMatcher_info(ptr); } }
 
 		public BFMatcher(NormType normType = NormType.L2, bool crossCheck = false)
 		{

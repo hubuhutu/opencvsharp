@@ -159,12 +159,12 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 
 		public static explicit operator Mat(CudaMem self)
 		{
-			return self?.CreateMatHeader();
+			return self==null?null: self.CreateMatHeader();
 		}
 
 		public static implicit operator GpuMat(CudaMem self)
 		{
-			return self?.CreateGpuMatHeader();
+			return self==null?null:self.CreateGpuMatHeader();
 		}
 
 		public bool IsContinuous()

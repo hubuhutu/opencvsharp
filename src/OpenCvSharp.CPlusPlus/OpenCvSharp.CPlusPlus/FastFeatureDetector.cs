@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<FastFeatureDetector> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_FastFeatureDetector_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_FastFeatureDetector_info(ptr); } }
 
 		public FastFeatureDetector(int threshold = 10, bool nonmaxSuppression = true)
 		{

@@ -104,7 +104,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public override IntPtr InfoPtr => NativeMethods.video_BackgroundSubtractorGMG_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.video_BackgroundSubtractorGMG_info(ptr); } }
 
 		public BackgroundSubtractorGMG()
 		{

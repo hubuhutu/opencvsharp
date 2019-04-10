@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<GFTTDetector> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_GFTTDetector_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_GFTTDetector_info(ptr); } }
 
 		public GFTTDetector(int maxCorners = 1000, double qualityLevel = 0.01, double minDistance = 1.0, int blockSize = 3, bool useHarrisDetector = false, double k = 0.04)
 		{

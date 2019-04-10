@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<BRISK> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_BRISK_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_BRISK_info(ptr); } }
 
 		public BRISK(int thresh = 30, int octaves = 3, float patternScale = 1f)
 		{

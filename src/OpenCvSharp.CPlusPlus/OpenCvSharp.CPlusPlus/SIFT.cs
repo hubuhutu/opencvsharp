@@ -27,7 +27,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public override IntPtr InfoPtr => NativeMethods.nonfree_SIFT_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.nonfree_SIFT_info(ptr); } }
 
 		public SIFT(int nFeatures = 0, int nOctaveLayers = 3, double contrastThreshold = 0.04, double edgeThreshold = 10.0, double sigma = 1.6)
 		{

@@ -9,7 +9,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public float End;
 
-		public static Range All => new Range(int.MinValue, int.MaxValue);
+        public static Range All { get { return new Range(int.MinValue, int.MaxValue); } }
 
 		public Rangef(float start, float end)
 		{

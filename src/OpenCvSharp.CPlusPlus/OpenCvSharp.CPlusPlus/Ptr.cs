@@ -19,7 +19,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private static readonly Dictionary<Type, ObjFunc> definedObjFunctions;
 
-		public virtual IntPtr Obj => objFunc(ptr);
+        public virtual IntPtr Obj { get { return objFunc(ptr); } }
 
 		static Ptr()
 		{

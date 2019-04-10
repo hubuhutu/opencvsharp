@@ -7,15 +7,15 @@ namespace OpenCvSharp
 	{
 		public new static readonly int SizeOf = Marshal.SizeOf(typeof(WCvSubdiv2D));
 
-		public unsafe int QuadEdges => ((WCvSubdiv2D*)(void*)ptr)->quad_edges;
+		public unsafe int QuadEdges { get { return  ((WCvSubdiv2D*)(void*)ptr)->quad_edges;}}
 
-		public unsafe bool IsGeometryValid => ((WCvSubdiv2D*)(void*)ptr)->is_geometry_valid != 0;
+		public unsafe bool IsGeometryValid { get { return  ((WCvSubdiv2D*)(void*)ptr)->is_geometry_valid != 0;}}
 
-		public unsafe uint RecentEdge => ((WCvSubdiv2D*)(void*)ptr)->recent_edge;
+		public unsafe uint RecentEdge { get { return  ((WCvSubdiv2D*)(void*)ptr)->recent_edge;}}
 
-		public unsafe CvPoint2D32f TopLeft => ((WCvSubdiv2D*)(void*)ptr)->topleft;
+		public unsafe CvPoint2D32f TopLeft { get { return  ((WCvSubdiv2D*)(void*)ptr)->topleft;}}
 
-		public unsafe CvPoint2D32f BottomRight => ((WCvSubdiv2D*)(void*)ptr)->bottomright;
+        public unsafe CvPoint2D32f BottomRight { get { return ((WCvSubdiv2D*)(void*)ptr)->bottomright; } }
 
 		protected CvSubdiv2D()
 		{

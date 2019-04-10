@@ -7,9 +7,9 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private bool disposed;
 
-		public int Size1 => NativeMethods.vector_vector_Point2f_getSize1(ptr).ToInt32();
+		public int Size1 {get {return  NativeMethods.vector_vector_Point2f_getSize1(ptr).ToInt32();}}
 
-		public int Size => Size1;
+		public int Size {get {return Size1;}}
 
 		public long[] Size2
 		{
@@ -27,7 +27,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public IntPtr ElemPtr => NativeMethods.vector_vector_Point2f_getPointer(ptr);
+        public IntPtr ElemPtr { get { return NativeMethods.vector_vector_Point2f_getPointer(ptr); } }
 
 		public VectorOfVectorPoint2f()
 		{

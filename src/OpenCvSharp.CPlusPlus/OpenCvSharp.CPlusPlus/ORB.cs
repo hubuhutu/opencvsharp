@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<ORB> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_ORB_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_ORB_info(ptr); } }
 
 		public ORB(int nFeatures = 500, float scaleFactor = 1.2f, int nLevels = 8, int edgeThreshold = 31, int firstLevel = 0, int wtaK = 2, ORBScore scoreType = ORBScore.Harris, int patchSize = 31)
 		{

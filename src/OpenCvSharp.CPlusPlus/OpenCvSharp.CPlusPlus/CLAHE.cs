@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<CLAHE> ptrObj;
 
-		public override IntPtr InfoPtr => NativeMethods.imgproc_CLAHE_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.imgproc_CLAHE_info(ptr); } }
 
 		public double ClipLimit
 		{

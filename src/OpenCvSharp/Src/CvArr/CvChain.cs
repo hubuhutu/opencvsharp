@@ -7,7 +7,7 @@ namespace OpenCvSharp
 	{
 		public new static readonly int SizeOf = Marshal.SizeOf(typeof(WCvChain));
 
-		public unsafe CvPoint Origin => ((WCvChain*)(void*)ptr)->origin;
+        public unsafe CvPoint Origin { get { return ((WCvChain*)(void*)ptr)->origin; } }
 
 		public CvChain(IntPtr ptr)
 			: base(ptr)

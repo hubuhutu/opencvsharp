@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private bool disposed;
 
-		public override IntPtr InfoPtr => NativeMethods.video_BackgroundSubtractor_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.video_BackgroundSubtractor_info(ptr); } }
 
 		internal static BackgroundSubtractor FromPtr(IntPtr ptr)
 		{

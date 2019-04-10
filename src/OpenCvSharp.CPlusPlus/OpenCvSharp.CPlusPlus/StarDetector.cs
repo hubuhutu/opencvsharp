@@ -9,7 +9,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<StarDetector> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_StarDetector_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_StarDetector_info(ptr); } }
 
 		public StarDetector(int maxSize = 45, int responseThreshold = 30, int lineThresholdProjected = 10, int lineThresholdBinarized = 8, int suppressNonmaxSize = 5)
 		{
@@ -72,7 +72,8 @@ namespace OpenCvSharp.CPlusPlus
 				throw new ArgumentNullException("image");
 			}
 			image.ThrowIfDisposed();
-			NativeMethods.features2d_StarDetector_detect(ptr, image.CvPtr, out IntPtr keypoints);
+            IntPtr keypoints;
+            NativeMethods.features2d_StarDetector_detect(ptr, image.CvPtr, out keypoints);
 			using (VectorOfKeyPoint vectorOfKeyPoint = new VectorOfKeyPoint(keypoints))
 			{
 				return vectorOfKeyPoint.ToArray();

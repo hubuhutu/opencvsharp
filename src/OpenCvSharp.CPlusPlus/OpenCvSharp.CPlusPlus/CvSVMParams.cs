@@ -6,7 +6,7 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private WCvSVMParams data;
 
-		internal WCvSVMParams NativeStruct => data;
+        internal WCvSVMParams NativeStruct { get { return data; } }
 
 		public SVMType SVMType
 		{

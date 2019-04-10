@@ -8,9 +8,9 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private bool disposed;
 
-		public int Size => NativeMethods.vector_Point3f_getSize(ptr).ToInt32();
+		public int Size {get{return NativeMethods.vector_Point3f_getSize(ptr).ToInt32();}}
 
-		public IntPtr ElemPtr => NativeMethods.vector_Point3f_getPointer(ptr);
+        public IntPtr ElemPtr { get { return NativeMethods.vector_Point3f_getPointer(ptr); } }
 
 		public VectorOfPoint3f()
 		{

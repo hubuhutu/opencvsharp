@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<SuperResolution> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.superres_SuperResolution_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.superres_SuperResolution_info(ptr); } }
 
 		private SuperResolutionImpl()
 		{

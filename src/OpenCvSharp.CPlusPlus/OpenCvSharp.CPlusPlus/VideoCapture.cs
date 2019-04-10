@@ -28,7 +28,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private bool disposed;
 
-		public CaptureType CaptureType => captureType;
+		public CaptureType CaptureType {get {return  captureType;}}
 
 		public int PosMsec
 		{
@@ -157,7 +157,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public int FrameCount => (int)NativeMethods.highgui_VideoCapture_get(ptr, 7);
+		public int FrameCount {get {return  (int)NativeMethods.highgui_VideoCapture_get(ptr, 7);}}
 
 		public double Brightness
 		{
@@ -633,7 +633,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public double XI_DataFormat => NativeMethods.highgui_VideoCapture_get(ptr, 401);
+        public double XI_DataFormat { get { return NativeMethods.highgui_VideoCapture_get(ptr, 401); } }
 
 		public double XI_OffsetX
 		{

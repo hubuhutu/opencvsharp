@@ -190,7 +190,9 @@ namespace OpenCvSharp.CPlusPlus
 		{
 			get
 			{
-				NativeMethods.stitching_Stitcher_component(ptr, out IntPtr pointer, out int length);
+                IntPtr pointer;
+                int length;
+				NativeMethods.stitching_Stitcher_component(ptr, out pointer , out  length);
 				int[] array = new int[length];
 				Marshal.Copy(pointer, array, 0, length);
 				return array;
@@ -205,7 +207,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public double WorkScale => NativeMethods.stitching_Stitcher_workScale(ptr);
+        public double WorkScale { get { return NativeMethods.stitching_Stitcher_workScale(ptr); } }
 
 		private Stitcher(IntPtr ptr)
 		{

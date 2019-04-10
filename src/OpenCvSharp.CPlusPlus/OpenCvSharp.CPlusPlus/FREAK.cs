@@ -9,7 +9,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<FREAK> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_FREAK_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_FREAK_info(ptr); } }
 
 		public FREAK(bool orientationNormalized = true, bool scaleNormalized = true, float patternScale = 22f, int nOctaves = 4, IEnumerable<int> selectedPairs = null)
 		{

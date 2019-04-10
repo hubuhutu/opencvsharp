@@ -12,7 +12,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<BriefDescriptorExtractor> extractorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_BriefDescriptorExtractor_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_BriefDescriptorExtractor_info(ptr); } }
 
 		public BriefDescriptorExtractor(int bytes = 32)
 		{

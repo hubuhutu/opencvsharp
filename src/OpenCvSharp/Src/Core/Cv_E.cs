@@ -1014,7 +1014,7 @@ namespace OpenCvSharp
             NativeMethods.cvExtractMSER(img.CvPtr, ToPtr(mask), ref contoursPtr, storage.CvPtr, @params.Struct);
 
             CvSeq<IntPtr> seq = new CvSeq<IntPtr>(contoursPtr);
-            contours = Array.ConvertAll(seq.ToArray(), p => new CvContour(p));
+            contours = Array.ConvertAll(seq.ToArray(), p =>  new CvContour(p));
 
             KeepAlive(img, mask, storage, @params);
         }

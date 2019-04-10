@@ -8,9 +8,9 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private bool disposed;
 
-		public int Size => NativeMethods.vector_Rect_getSize(ptr).ToInt32();
+		public int Size {get{return NativeMethods.vector_Rect_getSize(ptr).ToInt32();}}
 
-		public IntPtr ElemPtr => NativeMethods.vector_Rect_getPointer(ptr);
+        public IntPtr ElemPtr { get { return NativeMethods.vector_Rect_getPointer(ptr); } }
 
 		public VectorOfRect()
 		{

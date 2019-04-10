@@ -50,7 +50,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"DMatch (QueryIdx:{QueryIdx}, TrainIdx:{TrainIdx}, ImgIdx:{ImgIdx}, Distance:{Distance})";
+			return "DMatch (QueryIdx:"+QueryIdx+", TrainIdx:"+TrainIdx+", ImgIdx:"+ImgIdx+", Distance:"+Distance+")";
 		}
 	}
 }

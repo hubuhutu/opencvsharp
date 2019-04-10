@@ -9,7 +9,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<FaceRecognizer> recognizerPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.contrib_FaceRecognizer_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.contrib_FaceRecognizer_info(ptr); } }
 
 		protected FaceRecognizer()
 		{

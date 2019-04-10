@@ -2392,7 +2392,7 @@ namespace OpenCvSharp
         public static CvMat Reshape(CvArr arr, out CvMat header, int newCn, int newRows)
         {
             if (arr == null)
-                throw new ArgumentNullException(nameof(arr));
+                throw new ArgumentNullException("arr");
             header = new CvMat(false);
             return Reshape(arr, header, newCn, newRows);
         }
@@ -2439,9 +2439,9 @@ namespace OpenCvSharp
         public static CvMat Reshape(CvArr arr, CvMat header, int newCn, int newRows)
         {
             if (arr == null)
-                throw new ArgumentNullException(nameof(arr));
+                throw new ArgumentNullException("arr");
             if(header == null)
-                throw new ArgumentNullException(nameof(header));
+                throw new ArgumentNullException("header");
 
             IntPtr result = NativeMethods.cvReshape(arr.CvPtr, header.CvPtr, newCn, newRows);
             KeepAlive(arr, header);
@@ -2483,11 +2483,11 @@ namespace OpenCvSharp
             where T : CvArr
         {
             if (arr == null)
-                throw new ArgumentNullException(nameof(arr));
+                throw new ArgumentNullException("arr");
             if (header == null)
-                throw new ArgumentNullException(nameof(header));
+                throw new ArgumentNullException("header");
             if (newSizes == null)
-                throw new ArgumentNullException(nameof(newSizes));
+                throw new ArgumentNullException("newSizes");
 
             IntPtr result = NativeMethods.cvReshapeMatND(arr.CvPtr, sizeofHeader, header.CvPtr, newCn, newDims, newSizes);
             KeepAlive(arr);

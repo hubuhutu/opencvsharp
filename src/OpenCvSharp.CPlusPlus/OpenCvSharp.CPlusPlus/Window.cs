@@ -47,7 +47,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public IntPtr Handle => OpenCvSharp.NativeMethods.cvGetWindowHandle(name);
+		public IntPtr Handle {get{return  OpenCvSharp.NativeMethods.cvGetWindowHandle(name);}}
 
 		internal CvMouseCallback MouseCallback
 		{
@@ -66,7 +66,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public static bool HasQt => OpenCvSharp.NativeMethods.HasQt;
+        public static bool HasQt { get { return OpenCvSharp.NativeMethods.HasQt; } }
 
 		public event CvMouseCallback OnMouseCallback
 		{
@@ -150,7 +150,8 @@ namespace OpenCvSharp.CPlusPlus
 
 		private static string DefaultName()
 		{
-			return $"window{windowCount++}";
+            windowCount++;
+			return "window"+ windowCount+"";
 		}
 
 		protected override void Dispose(bool disposing)

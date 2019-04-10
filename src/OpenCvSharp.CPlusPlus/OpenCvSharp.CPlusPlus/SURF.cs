@@ -96,7 +96,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public override IntPtr InfoPtr => NativeMethods.nonfree_SURF_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.nonfree_SURF_info(ptr); } }
 
 		public SURF()
 		{

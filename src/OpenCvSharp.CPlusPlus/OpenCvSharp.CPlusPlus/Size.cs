@@ -9,7 +9,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public int Height;
 
-		public static Size Zero => default(Size);
+        public static Size Zero { get { return default(Size); } }
 
 		public Size(int width, int height)
 		{
@@ -64,7 +64,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(width:{Width} height:{Height})";
+			return "(width:"+Width+" height:"+Height+")";
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private AlgorithmInfo infoObj;
 
-		public string Name => Info.Name;
+        public string Name { get { return Info.Name; } }
 
 		public AlgorithmInfo Info
 		{

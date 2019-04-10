@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<DenseFeatureDetector> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_DenseFeatureDetector_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_DenseFeatureDetector_info(ptr); } }
 
 		public DenseFeatureDetector(float initFeatureScale = 1f, int featureScaleLevels = 1, float featureScaleMul = 0.1f, int initXyStep = 6, int initImgBound = 0, bool varyXyStepWithScale = true, bool varyImgBoundWithScale = false)
 		{

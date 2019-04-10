@@ -39,8 +39,8 @@ namespace OpenCvSharp
         
         public const string Version = "2413";
 
-        public const string DllMsvcr = "msvcr100";
-        public const string DllMsvcp = "msvcp100";
+        //public const string DllMsvcr = "msvcr100";
+        //public const string DllMsvcp = "msvcp100";
 
         public const string DllCalib3d = "opencv_calib3d" + Version;
         public const string DllCore = "opencv_core" + Version;
@@ -105,9 +105,9 @@ namespace OpenCvSharp
             string[] ap = ToArray(additionalPaths);
 
             // msvcr: 
-            WindowsLibraryLoader.Instance.LoadLibrary(DllMsvcr, ap);
+            //WindowsLibraryLoader.Instance.LoadLibrary(DllMsvcr, ap);
             // msvcp: msvcr
-            WindowsLibraryLoader.Instance.LoadLibrary(DllMsvcp, ap);
+            //WindowsLibraryLoader.Instance.LoadLibrary(DllMsvcp, ap);
 
             // core: 
             WindowsLibraryLoader.Instance.LoadLibrary(DllCore, ap);

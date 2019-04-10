@@ -20,7 +20,13 @@ namespace OpenCvSharp
 			}
 		}
 
-		public unsafe int ActiveCount => ((WCvSet*)(void*)ptr)->active_count;
+        public unsafe int ActiveCount
+        {
+            get
+            {
+                return ((WCvSet*)(void*)ptr)->active_count;
+            }
+        }
 
 		protected CvSet()
 		{

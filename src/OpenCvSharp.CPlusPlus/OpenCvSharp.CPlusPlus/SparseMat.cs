@@ -12,11 +12,11 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				get
 				{
-					return (T)Marshal.PtrToStructure(parent.Ptr(i0, createMissing: true, hashVal), typeof(T));
+					return (T)Marshal.PtrToStructure(parent.Ptr(i0,  true, hashVal), typeof(T));
 				}
 				set
 				{
-					IntPtr ptr = parent.Ptr(i0, createMissing: true, hashVal);
+					IntPtr ptr = parent.Ptr(i0,  true, hashVal);
 					Marshal.StructureToPtr(value, ptr, fDeleteOld: false);
 				}
 			}
@@ -25,11 +25,11 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				get
 				{
-					return (T)Marshal.PtrToStructure(parent.Ptr(i0, i1, createMissing: true, hashVal), typeof(T));
+					return (T)Marshal.PtrToStructure(parent.Ptr(i0, i1,  true, hashVal), typeof(T));
 				}
 				set
 				{
-					IntPtr ptr = parent.Ptr(i0, i1, createMissing: true, hashVal);
+					IntPtr ptr = parent.Ptr(i0, i1, true, hashVal);
 					Marshal.StructureToPtr(value, ptr, fDeleteOld: false);
 				}
 			}
@@ -38,11 +38,11 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				get
 				{
-					return (T)Marshal.PtrToStructure(parent.Ptr(i0, i1, i2, createMissing: true, hashVal), typeof(T));
+					return (T)Marshal.PtrToStructure(parent.Ptr(i0, i1, i2,  true, hashVal), typeof(T));
 				}
 				set
 				{
-					IntPtr ptr = parent.Ptr(i0, i1, i2, createMissing: true, hashVal);
+					IntPtr ptr = parent.Ptr(i0, i1, i2,  true, hashVal);
 					Marshal.StructureToPtr(value, ptr, fDeleteOld: false);
 				}
 			}
@@ -51,11 +51,11 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				get
 				{
-					return (T)Marshal.PtrToStructure(parent.Ptr(idx, createMissing: true, hashVal), typeof(T));
+					return (T)Marshal.PtrToStructure(parent.Ptr(idx,  true, hashVal), typeof(T));
 				}
 				set
 				{
-					IntPtr ptr = parent.Ptr(idx, createMissing: true, hashVal);
+					IntPtr ptr = parent.Ptr(idx,  true, hashVal);
 					Marshal.StructureToPtr(value, ptr, fDeleteOld: false);
 				}
 			}
@@ -378,7 +378,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T? Find<T>(int i0, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return null;
@@ -388,7 +388,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T? Find<T>(int i0, int i1, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, i1, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0, i1,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return null;
@@ -398,7 +398,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T? Find<T>(int i0, int i1, int i2, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, i1, i2, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0, i1, i2,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return null;
@@ -408,7 +408,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T? Find<T>(int[] idx, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(idx, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(idx,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return null;
@@ -418,7 +418,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T Value<T>(int i0, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return default(T);
@@ -428,7 +428,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T Value<T>(int i0, int i1, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, i1, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0, i1,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return default(T);
@@ -438,7 +438,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T Value<T>(int i0, int i1, int i2, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(i0, i1, i2, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(i0, i1, i2,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return default(T);
@@ -448,7 +448,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public T Value<T>(int[] idx, long? hashVal = default(long?)) where T : struct
 		{
-			IntPtr intPtr = Ptr(idx, createMissing: false, hashVal);
+			IntPtr intPtr = Ptr(idx,  false, hashVal);
 			if (intPtr == IntPtr.Zero)
 			{
 				return default(T);

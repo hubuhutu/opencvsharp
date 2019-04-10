@@ -62,7 +62,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(width:{Width} height:{Height})";
+			return "(width:"+Width+" height:"+Height+")";
 		}
 	}
 }

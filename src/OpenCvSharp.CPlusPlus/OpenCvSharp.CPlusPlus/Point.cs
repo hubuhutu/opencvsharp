@@ -99,7 +99,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(x:{X} y:{Y})";
+			return "(x:"+X+" y:"+Y+")";
 		}
 
 		public static double Distance(Point p1, Point p2)

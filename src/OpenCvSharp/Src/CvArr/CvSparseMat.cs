@@ -9,19 +9,19 @@ namespace OpenCvSharp
 
 		public static readonly int SizeOf = Marshal.SizeOf(typeof(WCvSparseMat));
 
-		public new unsafe int Dims => ((WCvSparseMat*)(void*)ptr)->dims;
+		public new unsafe int Dims { get { return  ((WCvSparseMat*)(void*)ptr)->dims;}}
 
-		public unsafe int Type => ((WCvSparseMat*)(void*)ptr)->type;
+		public unsafe int Type { get { return  ((WCvSparseMat*)(void*)ptr)->type;}}
 
-		public unsafe int HashSize => ((WCvSparseMat*)(void*)ptr)->hashsize;
+		public unsafe int HashSize { get { return  ((WCvSparseMat*)(void*)ptr)->hashsize;}}
 
-		public unsafe IntPtr HashTable => new IntPtr(((WCvSparseMat*)(void*)ptr)->hashtable);
+		public unsafe IntPtr HashTable { get { return  new IntPtr(((WCvSparseMat*)(void*)ptr)->hashtable);}}
 
-		public unsafe IntPtr Heap => new IntPtr(((WCvSparseMat*)(void*)ptr)->heap);
+		public unsafe IntPtr Heap { get { return  new IntPtr(((WCvSparseMat*)(void*)ptr)->heap);}}
 
-		public unsafe int IdxOffset => ((WCvSparseMat*)(void*)ptr)->idxoffset;
+		public unsafe int IdxOffset { get { return  ((WCvSparseMat*)(void*)ptr)->idxoffset;}}
 
-		public unsafe int ValOffset => ((WCvSparseMat*)(void*)ptr)->valoffset;
+        public unsafe int ValOffset { get { return ((WCvSparseMat*)(void*)ptr)->valoffset; } }
 
 		public unsafe int[] Size
 		{

@@ -113,3 +113,4 @@ Help EN
 /src/*.opendb
 /src/.vs/OpenCvSharp2/v15/Server/sqlite3
 /src/.vs/OpenCvSharp2/v15
+/src/OpenCvSharp2.VC.db

@@ -29,7 +29,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public float Bottom => Y + Height - 1f;
+		public float Bottom {get{return Y + Height - 1f;}}
 
 		public float Left
 		{
@@ -43,7 +43,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public float Right => X + Width - 1f;
+		public float Right {get{return X + Width - 1f;}}
 
 		public Point2f Location
 		{
@@ -71,9 +71,9 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public Point2f TopLeft => new Point2f(X, Y);
+		public Point2f TopLeft {get{return new Point2f(X, Y);}}
 
-		public Point2f BottomRight => new Point2f(X + Width - 1f, Y + Height - 1f);
+		public Point2f BottomRight {get{return new Point2f(X + Width - 1f, Y + Height - 1f);}}
 
 		public Rectf(float x, float y, float width, float height)
 		{
@@ -254,7 +254,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(x:{X} y:{Y} width:{Width} height:{Height})";
+            return "(x:" + X + " y:" + Y + " width:" + Width + " height:" + Height + ")";
 		}
 	}
 }

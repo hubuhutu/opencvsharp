@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<DenseOpticalFlowExt> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.superres_DenseOpticalFlowExt_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.superres_DenseOpticalFlowExt_info(ptr); } }
 
 		private DenseOpticalFlowExtImpl()
 		{
@@ -84,10 +84,12 @@ namespace OpenCvSharp.CPlusPlus
 			frame0.ThrowIfDisposed();
 			frame1.ThrowIfDisposed();
 			flow1.ThrowIfNotReady();
-			flow2?.ThrowIfNotReady();
+			if(flow2!=null)
+            flow2.ThrowIfNotReady();
 			NativeMethods.superres_DenseOpticalFlowExt_calc(ptr, frame0.CvPtr, frame1.CvPtr, flow1.CvPtr, Cv2.ToPtr(flow2));
 			flow1.Fix();
-			flow2?.Fix();
+			if(flow2!=null)
+			flow2.Fix();
 			GC.KeepAlive(frame0);
 			GC.KeepAlive(frame1);
 		}

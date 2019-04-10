@@ -29,7 +29,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public int Bottom => Y + Height - 1;
+		public int Bottom {get{return Y + Height - 1;}}
 
 		public int Left
 		{
@@ -43,7 +43,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public int Right => X + Width - 1;
+		public int Right {get{return X + Width - 1;}}
 
 		public Point Location
 		{
@@ -71,9 +71,9 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public Point TopLeft => new Point(X, Y);
+		public Point TopLeft {get{return new Point(X, Y);}}
 
-		public Point BottomRight => new Point(X + Width - 1, Y + Height - 1);
+        public Point BottomRight { get { return new Point(X + Width - 1, Y + Height - 1); } }
 
 		public Rect(int x, int y, int width, int height)
 		{
@@ -264,7 +264,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(x:{X} y:{Y} width:{Width} height:{Height})";
+			return "(x:"+X+" y:"+Y+" width:"+Width+" height:"+Height+")";
 		}
 	}
 }

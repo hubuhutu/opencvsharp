@@ -63,7 +63,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"[Pt:{Pt}, Size:{Size}, Angle:{Angle}, Response:{Response}, Octave:{Octave}, ClassID:{ClassID}]";
+            return "[Pt:" + Pt + ", Size:" + Size + ", Angle" + Angle + ", Response" + Response + ", Octave" + Octave + ", ClassID" + ClassID + "]";
 		}
 	}
 }

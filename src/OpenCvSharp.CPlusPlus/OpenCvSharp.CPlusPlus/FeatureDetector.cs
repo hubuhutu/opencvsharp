@@ -10,7 +10,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<FeatureDetector> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.features2d_FeatureDetector_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.features2d_FeatureDetector_info(ptr); } }
 
 		internal FeatureDetector()
 		{

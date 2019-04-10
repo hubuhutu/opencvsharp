@@ -4,11 +4,11 @@ namespace OpenCvSharp.CPlusPlus
 {
 	public class CvDTreeNode : CvObject
 	{
-		public unsafe int ClassIdx => ((WCvDTreeNode*)(void*)ptr)->class_idx;
+		public unsafe int ClassIdx {get{return ((WCvDTreeNode*)(void*)ptr)->class_idx;}}
 
-		public unsafe int Tn => ((WCvDTreeNode*)(void*)ptr)->Tn;
+		public unsafe int Tn {get{return ((WCvDTreeNode*)(void*)ptr)->Tn;}}
 
-		public unsafe double Value => ((WCvDTreeNode*)(void*)ptr)->value;
+		public unsafe double Value {get{return ((WCvDTreeNode*)(void*)ptr)->value;}}
 
 		public unsafe CvDTreeNode Parent
 		{
@@ -62,9 +62,9 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public unsafe int SampleCount => ((WCvDTreeNode*)(void*)ptr)->sample_count;
+		public unsafe int SampleCount {get{return ((WCvDTreeNode*)(void*)ptr)->sample_count;}}
 
-		public unsafe int Depth => ((WCvDTreeNode*)(void*)ptr)->depth;
+        public unsafe int Depth { get { return ((WCvDTreeNode*)(void*)ptr)->depth; } }
 
 		public CvDTreeNode(IntPtr ptr)
 			: base(ptr)

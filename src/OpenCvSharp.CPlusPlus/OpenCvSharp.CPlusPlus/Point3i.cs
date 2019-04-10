@@ -86,7 +86,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"(x:{X} y:{Y} z:{Z})";
+			return "(x:"+X+" y:"+Y+" z:"+Z+")";
 		}
 	}
 }

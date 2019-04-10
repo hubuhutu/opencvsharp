@@ -494,17 +494,17 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public MatExprIndexer Expr => matExprIndexer ?? (matExprIndexer = new MatExprIndexer(this));
+		public MatExprIndexer Expr {get{return matExprIndexer ?? (matExprIndexer = new MatExprIndexer(this));}}
 
-		public ColExprIndexer ColExpr => colExprIndexer ?? (colExprIndexer = new ColExprIndexer(this));
+		public ColExprIndexer ColExpr {get{return colExprIndexer ?? (colExprIndexer = new ColExprIndexer(this));}}
 
-		public RowExprIndexer RowExpr => rowExprIndexer ?? (rowExprIndexer = new RowExprIndexer(this));
+		public RowExprIndexer RowExpr {get{return rowExprIndexer ?? (rowExprIndexer = new RowExprIndexer(this));}}
 
-		public int Cols => NativeMethods.core_Mat_cols(ptr);
+		public int Cols {get{return NativeMethods.core_Mat_cols(ptr);}}
 
-		public int Width => NativeMethods.core_Mat_cols(ptr);
+		public int Width {get{return NativeMethods.core_Mat_cols(ptr);}}
 
-		public unsafe IntPtr Data => new IntPtr(DataPointer);
+		public unsafe IntPtr Data {get{return new IntPtr(DataPointer);}}
 
 		public unsafe byte* DataPointer
 		{
@@ -551,13 +551,13 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public int Rows => NativeMethods.core_Mat_rows(ptr);
+		public int Rows {get{return NativeMethods.core_Mat_rows(ptr);}}
 
-		public int Height => NativeMethods.core_Mat_rows(ptr);
+		public int Height {get{return NativeMethods.core_Mat_rows(ptr);}}
 
-		public ColIndexer Col => colIndexer ?? (colIndexer = new ColIndexer(this));
+		public ColIndexer Col {get{return colIndexer ?? (colIndexer = new ColIndexer(this));}}
 
-		public RowIndexer Row => rowIndexer ?? (rowIndexer = new RowIndexer(this));
+		public RowIndexer Row {get{return rowIndexer ?? (rowIndexer = new RowIndexer(this));}}
 
 		public MatExpr Abs()
 		{
@@ -926,13 +926,15 @@ namespace OpenCvSharp.CPlusPlus
 
 		public byte[] ImEncode(string ext = ".png", int[] prms = null)
 		{
-			Cv2.ImEncode(ext, this, out byte[] buf, prms);
+            byte[] buf;
+			Cv2.ImEncode(ext, this, out buf, prms);
 			return buf;
 		}
 
 		public byte[] ImEncode(string ext = ".png", params ImageEncodingParam[] prms)
 		{
-			Cv2.ImEncode(ext, this, out byte[] buf, prms);
+            byte[] buf;
+			Cv2.ImEncode(ext, this, out  buf, prms);
 			return buf;
 		}
 
@@ -1710,7 +1712,8 @@ namespace OpenCvSharp.CPlusPlus
 			ThrowIfDisposed();
 			if (adjustAlignment)
 			{
-				NativeMethods.core_Mat_IplImage_alignment(ptr, out IntPtr outImage);
+                IntPtr outImage;
+                NativeMethods.core_Mat_IplImage_alignment(ptr, out outImage);
 				return new IplImage(outImage);
 			}
 			IplImage iplImage = new IplImage(isEnabledDispose: false);
@@ -2283,7 +2286,9 @@ namespace OpenCvSharp.CPlusPlus
 		public void LocateROI(out Size wholeSize, out Point ofs)
 		{
 			ThrowIfDisposed();
-			NativeMethods.core_Mat_locateROI(ptr, out CvSize wholeSize2, out CvPoint ofs2);
+            CvSize wholeSize2;
+            CvPoint ofs2;
+            NativeMethods.core_Mat_locateROI(ptr, out wholeSize2, out ofs2);
 			wholeSize = wholeSize2;
 			ofs = ofs2;
 		}
@@ -3253,7 +3258,7 @@ namespace OpenCvSharp.CPlusPlus
 			}
 		}
 
-		public bool IsReadOnly => false;
+        public bool IsReadOnly { get { return false; } }
 
 		protected Mat()
 		{

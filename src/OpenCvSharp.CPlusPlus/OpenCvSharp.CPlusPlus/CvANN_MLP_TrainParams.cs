@@ -4,7 +4,7 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private WCvANN_MLP_TrainParams data;
 
-		internal WCvANN_MLP_TrainParams NativeStruct => data;
+        internal WCvANN_MLP_TrainParams NativeStruct { get { return data; } }
 
 		public TermCriteria TermCrit
 		{

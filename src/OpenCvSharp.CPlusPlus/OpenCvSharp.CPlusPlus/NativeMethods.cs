@@ -4078,14 +4078,14 @@ namespace OpenCvSharp.CPlusPlus
 			{
 				string[] additionalPaths2 = EnumerableEx.ToArray(additionalPaths);
 				OpenCvSharp.NativeMethods.LoadLibraries(additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_contrib2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_gpu2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_ocl2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_nonfree2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_stitching2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_superres2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("opencv_videostab2410", additionalPaths2);
-				WindowsLibraryLoader.Instance.LoadLibrary("OpenCvSharpExtern", additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllContrib , additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllGpu, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllOcl, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllNonfree, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllStitching, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllSuperres, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllVideoStab, additionalPaths2);
+				WindowsLibraryLoader.Instance.LoadLibrary(DllExtern, additionalPaths2);
 			}
 		}
 

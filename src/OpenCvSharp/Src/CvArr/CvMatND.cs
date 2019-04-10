@@ -26,9 +26,9 @@ namespace OpenCvSharp
 
 		public static readonly int SizeOf = Marshal.SizeOf(typeof(WCvMatND));
 
-		public new unsafe int Dims => ((WCvMatND*)(void*)ptr)->dims;
+		public new unsafe int Dims { get { return  ((WCvMatND*)(void*)ptr)->dims;}}
 
-		public unsafe int Type => ((WCvMatND*)(void*)ptr)->type;
+        public unsafe int Type { get { return ((WCvMatND*)(void*)ptr)->type; } }
 
 		public unsafe IntPtr RefCount
 		{
@@ -72,15 +72,15 @@ namespace OpenCvSharp
 			}
 		}
 
-		public unsafe byte* DataByte => (byte*)((WCvMatND*)(void*)ptr)->data;
+		public unsafe byte* DataByte { get { return  (byte*)((WCvMatND*)(void*)ptr)->data;}}
 
-		public unsafe short* DataInt16 => (short*)((WCvMatND*)(void*)ptr)->data;
+		public unsafe short* DataInt16 { get { return  (short*)((WCvMatND*)(void*)ptr)->data;}}
 
-		public unsafe int* DataInt32 => (int*)((WCvMatND*)(void*)ptr)->data;
+		public unsafe int* DataInt32 { get { return  (int*)((WCvMatND*)(void*)ptr)->data;}}
 
-		public unsafe float* DataSingle => (float*)((WCvMatND*)(void*)ptr)->data;
+		public unsafe float* DataSingle { get { return  (float*)((WCvMatND*)(void*)ptr)->data;}}
 
-		public unsafe double* DataDouble => (double*)((WCvMatND*)(void*)ptr)->data;
+		public unsafe double* DataDouble { get { return  (double*)((WCvMatND*)(void*)ptr)->data;}}
 
 		public unsafe PointerAccessor1D_Byte DataArrayByte
 		{

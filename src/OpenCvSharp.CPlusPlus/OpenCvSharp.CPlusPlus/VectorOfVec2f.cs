@@ -9,9 +9,9 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private bool disposed;
 
-		public int Size => NativeMethods.vector_Vec2f_getSize(ptr).ToInt32();
+		public int Size {get{return NativeMethods.vector_Vec2f_getSize(ptr).ToInt32();}}
 
-		public IntPtr ElemPtr => NativeMethods.vector_Vec2f_getPointer(ptr);
+        public IntPtr ElemPtr { get { return NativeMethods.vector_Vec2f_getPointer(ptr); } }
 
 		public VectorOfVec2f()
 		{

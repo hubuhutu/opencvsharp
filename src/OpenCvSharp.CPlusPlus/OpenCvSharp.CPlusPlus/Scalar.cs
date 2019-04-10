@@ -492,7 +492,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		public override string ToString()
 		{
-			return $"[{Val0}, {Val1}, {Val2}, {Val3}]";
+			return "["+Val0+", "+Val1+", "+Val2+", "+Val3+"]";
 		}
 
 		public static bool operator ==(Scalar s1, Scalar s2)

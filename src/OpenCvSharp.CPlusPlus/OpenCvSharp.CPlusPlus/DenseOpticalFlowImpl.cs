@@ -8,7 +8,7 @@ namespace OpenCvSharp.CPlusPlus
 
 		private Ptr<DenseOpticalFlow> detectorPtr;
 
-		public override IntPtr InfoPtr => NativeMethods.video_DenseOpticalFlow_info(ptr);
+        public override IntPtr InfoPtr { get { return NativeMethods.video_DenseOpticalFlow_info(ptr); } }
 
 		private DenseOpticalFlowImpl()
 		{

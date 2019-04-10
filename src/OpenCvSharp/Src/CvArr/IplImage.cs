@@ -70,21 +70,21 @@ namespace OpenCvSharp
 			}
 		}
 
-		public unsafe int DataOrder => ((WIplImage*)(void*)ptr)->dataOrder;
+		public unsafe int DataOrder { get { return  ((WIplImage*)(void*)ptr)->dataOrder;}}
 
-		public unsafe BitDepth Depth => (BitDepth)((WIplImage*)(void*)ptr)->depth;
+		public unsafe BitDepth Depth { get { return  (BitDepth)((WIplImage*)(void*)ptr)->depth;}}
 
-		public unsafe int Height => ((WIplImage*)(void*)ptr)->height;
+		public unsafe int Height { get { return  ((WIplImage*)(void*)ptr)->height;}}
 
-		public unsafe int ID => ((WIplImage*)(void*)ptr)->ID;
+		public unsafe int ID { get { return  ((WIplImage*)(void*)ptr)->ID;}}
 
-		public unsafe IntPtr ImageData => new IntPtr(((WIplImage*)(void*)ptr)->imageData);
+		public unsafe IntPtr ImageData { get { return  new IntPtr(((WIplImage*)(void*)ptr)->imageData);}}
 
-		public unsafe byte* ImageDataPtr => ((WIplImage*)(void*)ptr)->imageData;
+		public unsafe byte* ImageDataPtr { get { return  ((WIplImage*)(void*)ptr)->imageData;}}
 
-		public unsafe IntPtr ImageDataOrigin => new IntPtr(((WIplImage*)(void*)ptr)->imageDataOrigin);
+		public unsafe IntPtr ImageDataOrigin { get { return  new IntPtr(((WIplImage*)(void*)ptr)->imageDataOrigin);}}
 
-		public unsafe int ImageSize => ((WIplImage*)(void*)ptr)->imageSize;
+		public unsafe int ImageSize { get { return  ((WIplImage*)(void*)ptr)->imageSize;}}
 
 		[Obsolete]
 		public unsafe IntPtr MaskROI
@@ -95,21 +95,21 @@ namespace OpenCvSharp
 			}
 		}
 
-		public unsafe int NChannels => ((WIplImage*)(void*)ptr)->nChannels;
+		public unsafe int NChannels { get { return  ((WIplImage*)(void*)ptr)->nChannels;}}
 
-		public unsafe int NSize => ((WIplImage*)(void*)ptr)->nSize;
+		public unsafe int NSize { get { return  ((WIplImage*)(void*)ptr)->nSize;}}
 
-		public unsafe ImageOrigin Origin => (ImageOrigin)((WIplImage*)(void*)ptr)->origin;
+		public unsafe ImageOrigin Origin { get { return  (ImageOrigin)((WIplImage*)(void*)ptr)->origin;}}
 
-		public unsafe IntPtr ROIPointer => new IntPtr(((WIplImage*)(void*)ptr)->roi);
+		public unsafe IntPtr ROIPointer { get { return  new IntPtr(((WIplImage*)(void*)ptr)->roi);}}
 
-		public unsafe IplROI ROIValue => (IplROI)Marshal.PtrToStructure(new IntPtr(((WIplImage*)(void*)ptr)->roi), typeof(IplROI));
+		public unsafe IplROI ROIValue { get { return  (IplROI)Marshal.PtrToStructure(new IntPtr(((WIplImage*)(void*)ptr)->roi), typeof(IplROI));}}
 
-		public unsafe int Width => ((WIplImage*)(void*)ptr)->width;
+		public unsafe int Width { get { return  ((WIplImage*)(void*)ptr)->width;}}
 
-		public unsafe int WidthStep => ((WIplImage*)(void*)ptr)->widthStep;
+		public unsafe int WidthStep { get { return  ((WIplImage*)(void*)ptr)->widthStep;}}
 
-		public unsafe IntPtr TileInfo => new IntPtr(((WIplImage*)(void*)ptr)->tileInfo);
+		public unsafe IntPtr TileInfo { get { return  new IntPtr(((WIplImage*)(void*)ptr)->tileInfo);}}
 
 		public unsafe CvSize Size
 		{
@@ -144,7 +144,7 @@ namespace OpenCvSharp
 			}
 		}
 
-		public override int Dims => 2;
+		public override int Dims { get { return  2;}}
 
 		public unsafe int Bpp
 		{
@@ -179,7 +179,7 @@ namespace OpenCvSharp
 			}
 			if (!File.Exists(fileName))
 			{
-				throw new FileNotFoundException($"Not found '{fileName}'", fileName);
+				throw new FileNotFoundException(string.Format("Not found '{0}'", fileName));
 			}
 			ptr = NativeMethods.cvLoadImage(fileName, flags);
 			if (ptr == IntPtr.Zero)
@@ -712,7 +712,7 @@ namespace OpenCvSharp
 				}
 			}
 			Cv.Split(this, list[0], list[1], list[2], list[3]);
-			list.RemoveAll((IplImage obj) => obj == null);
+			list.RemoveAll((IplImage obj) =>  obj == null);
 			return list.ToArray();
 		}
 

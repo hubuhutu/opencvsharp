@@ -227,7 +227,7 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 			}
 		}
 
-		public int Bpp => (int)Math.Pow(2.0, Depth() / 2 + 1 + 2);
+		public int Bpp {get {return  (int)Math.Pow(2.0, Depth() / 2 + 1 + 2);}}
 
 		public virtual GpuMat this[Rect roi]
 		{
@@ -253,9 +253,9 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 			}
 		}
 
-		public ColIndexer Col => colIndexer ?? (colIndexer = new ColIndexer(this));
+		public ColIndexer Col {get{return colIndexer ?? (colIndexer = new ColIndexer(this));}}
 
-		public RowIndexer Row => rowIndexer ?? (rowIndexer = new RowIndexer(this));
+        public RowIndexer Row { get { return rowIndexer ?? (rowIndexer = new RowIndexer(this)); } }
 
 		private void ThrowIfNotAvailable()
 		{

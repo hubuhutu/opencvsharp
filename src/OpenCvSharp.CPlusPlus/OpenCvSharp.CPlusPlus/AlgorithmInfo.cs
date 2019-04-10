@@ -7,8 +7,13 @@ namespace OpenCvSharp.CPlusPlus
 	{
 		private readonly IntPtr ptr;
 
-		public IntPtr CvPtr => ptr;
-
+        public IntPtr CvPtr
+        {
+            get
+            {
+                return ptr;
+            }
+        }
 		public string Name
 		{
 			get

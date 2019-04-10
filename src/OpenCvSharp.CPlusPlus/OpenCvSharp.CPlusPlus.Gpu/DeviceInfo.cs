@@ -7,7 +7,7 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 	{
 		private bool disposed;
 
-		public int DeviceId => NativeMethods.gpu_DeviceInfo_deviceID(ptr);
+		public int DeviceId {get {return  NativeMethods.gpu_DeviceInfo_deviceID(ptr);}}
 
 		public string Name
 		{
@@ -19,19 +19,19 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 			}
 		}
 
-		public int MajorVersion => NativeMethods.gpu_DeviceInfo_majorVersion(ptr);
+		public int MajorVersion {get {return  NativeMethods.gpu_DeviceInfo_majorVersion(ptr);}}
 
-		public int MinorVersion => NativeMethods.gpu_DeviceInfo_minorVersion(ptr);
+		public int MinorVersion {get {return  NativeMethods.gpu_DeviceInfo_minorVersion(ptr);}}
 
-		public int MultiProcessorCount => NativeMethods.gpu_DeviceInfo_multiProcessorCount(ptr);
+		public int MultiProcessorCount {get {return  NativeMethods.gpu_DeviceInfo_multiProcessorCount(ptr);}}
 
-		public long SharedMemPerBlock => (long)NativeMethods.gpu_DeviceInfo_sharedMemPerBlock(ptr);
+		public long SharedMemPerBlock {get {return  (long)NativeMethods.gpu_DeviceInfo_sharedMemPerBlock(ptr);}}
 
-		public long FreeMemory => (long)NativeMethods.gpu_DeviceInfo_freeMemory(ptr);
+		public long FreeMemory {get {return  (long)NativeMethods.gpu_DeviceInfo_freeMemory(ptr);}}
 
-		public long TotalMemory => (long)NativeMethods.gpu_DeviceInfo_totalMemory(ptr);
+		public long TotalMemory {get {return  (long)NativeMethods.gpu_DeviceInfo_totalMemory(ptr);}}
 
-		public bool IsCompatible => NativeMethods.gpu_DeviceInfo_isCompatible(ptr) != 0;
+        public bool IsCompatible { get { return NativeMethods.gpu_DeviceInfo_isCompatible(ptr) != 0; } }
 
 		public DeviceInfo()
 		{
@@ -61,7 +61,8 @@ namespace OpenCvSharp.CPlusPlus.Gpu
 
 		public void QueryMemory(out long totalMemory, out long freeMemory)
 		{
-			NativeMethods.gpu_DeviceInfo_queryMemory(ptr, out ulong totalMemory2, out ulong freeMemory2);
+            ulong totalMemory2,freeMemory2;
+			NativeMethods.gpu_DeviceInfo_queryMemory(ptr, out totalMemory2, out freeMemory2);
 			totalMemory = (long)totalMemory2;
 			freeMemory = (long)freeMemory2;
 		}

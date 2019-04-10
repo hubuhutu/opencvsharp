@@ -353,7 +353,7 @@ namespace OpenCvSharp
         {
             if (img == null)
                 throw new ArgumentNullException("img");
-            
+
             NativeMethods.cvLine(img.CvPtr, pt1, pt2, color, thickness, lineType, shift);
             GC.KeepAlive(img);
         }
@@ -634,7 +634,7 @@ namespace OpenCvSharp
         /// <typeparam name="T">Object type to load</typeparam>
         /// <param name="filename">File name. </param>
         /// <returns>The function cvLoad loads object from file.</returns>
-#endif     
+#endif
         public static T Load<T>(string filename) where T : DisposableCvObject
         {
             string realName;
@@ -656,7 +656,7 @@ namespace OpenCvSharp
         /// <param name="filename">File name. </param>
         /// <param name="memstorage">Memory storage for dynamic structures, such as CvSeq  or CvGraph. It is not used for matrices or images. </param>
         /// <returns>The function cvLoad loads object from file.</returns>
-#endif     
+#endif
         public static T Load<T>(string filename, CvMemStorage memstorage) where T : DisposableCvObject
         {
             string realName;
@@ -680,7 +680,7 @@ namespace OpenCvSharp
         /// <param name="memstorage">Memory storage for dynamic structures, such as CvSeq  or CvGraph. It is not used for matrices or images. </param>
         /// <param name="name">Optional object name. If it is NULL, the first top-level object in the storage will be loaded. </param>
         /// <returns>The function cvLoad loads object from file.</returns>
-#endif 
+#endif
         public static T Load<T>(string filename, CvMemStorage memstorage, string name) where T : DisposableCvObject
         {
             string realName;
@@ -710,18 +710,18 @@ namespace OpenCvSharp
         public static T Load<T>(string filename, CvMemStorage memstorage, string name, out string realName) where T : DisposableCvObject
         {
             if (string.IsNullOrEmpty(filename))
-                throw new ArgumentNullException(nameof(filename));
+                throw new ArgumentNullException("filename");
             if (!File.Exists(filename))
                 throw new FileNotFoundException("", filename);
 
-            IntPtr memstoragePtr = memstorage?.CvPtr ?? IntPtr.Zero;
+            IntPtr memstoragePtr = memstorage != null ? memstorage.CvPtr : IntPtr.Zero;
             StringBuilder realNameSb = new StringBuilder(1024);
             IntPtr result = NativeMethods.cvLoad(filename, memstoragePtr, name, realNameSb);
             GC.KeepAlive(memstorage);
             realName = realNameSb.ToString();
 
             try
-            {                                             
+            {
                 var obj = Util.Cast<T>(result);
                 if (obj != null)
                     obj.IsEnabledDispose = true;
@@ -969,9 +969,9 @@ namespace OpenCvSharp
         public static void LogPolar(CvArr src, CvArr dst, CvPoint2D32f center, double M, Interpolation flags)
         {
             if (src == null)
-                throw new ArgumentNullException(nameof(src));
+                throw new ArgumentNullException("src");
             if (dst == null)
-                throw new ArgumentNullException(nameof(dst));
+                throw new ArgumentNullException("dst");
             NativeMethods.cvLogPolar(src.CvPtr, dst.CvPtr, center, M, flags);
             KeepAlive(src, dst);
         }
@@ -1099,7 +1099,7 @@ namespace OpenCvSharp
         {
             if (lsh == null)
                 throw new ArgumentNullException("lsh");
-            
+
             var ret = NativeMethods.LSHSize(lsh.CvPtr);
             GC.KeepAlive(lsh);
             return ret;
