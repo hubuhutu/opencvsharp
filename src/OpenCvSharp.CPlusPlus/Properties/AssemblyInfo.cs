@@ -17,7 +17,6 @@ using System.Security.Permissions;
 [assembly: AssemblyTrademark("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("ff17a8c6-d8bd-40a4-8bda-709a5a2204e3")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.4.13.*")]
 [module: UnverifiableCode]

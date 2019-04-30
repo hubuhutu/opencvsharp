@@ -2,6 +2,7 @@
 #define _CPP_IMGPROC_H_
 
 #include "include_opencv.h"
+#include "improc_conn.h"
 
 CVAPI(cv::Mat*) imgproc_getGaborKernel(CvSize ksize, double sigma, double theta, 
 	double lambd, double gamma, double psi, int ktype)
@@ -763,6 +764,26 @@ CVAPI(double) imgproc_pointPolygonTest_Point2f(cv::Point2f *contour, int contour
 {
 	cv::Mat_<cv::Point2f> contourVec(contourLength, 1, contour);
 	return cv::pointPolygonTest(contourVec, pt, measureDist != 0);
+}
+
+/*
+* opencv3的连通域分析，移植
+* by zy 2019/4/30
+*
+*
+*
+*********/
+
+CVAPI(int) imgproc_connectedComponents(cv::_InputArray *image, cv::_OutputArray *labels,
+    int connectivity, int ltype)
+{
+    return connectedComponents(entity(image), entity(labels), connectivity, ltype);
+}
+
+CVAPI(int) imgproc_connectedComponentsWithStats(cv::_InputArray *image, cv::_OutputArray *labels,
+    cv::_OutputArray *stats, cv::_OutputArray *centroids, int connectivity, int ltype)
+{
+    return connectedComponentsWithStats(entity(image), entity(labels), entity(stats), entity(centroids), connectivity, ltype);
 }
 
 #endif

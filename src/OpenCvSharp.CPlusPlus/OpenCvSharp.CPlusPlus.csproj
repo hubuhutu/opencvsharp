@@ -4,9 +4,9 @@
     <ProjectGuid>{524CC7B4-75B9-4925-9DA4-3DACD40F4814}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType> 
+    <OutputType>Library</OutputType>
     <AssemblyName>OpenCvSharp.CPlusPlus</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <TargetFrameworkProfile />
@@ -31,7 +31,7 @@
     <OutputPath>bin\x86\Debug\</OutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget> 
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -40,7 +40,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget> 
+    <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
@@ -48,6 +48,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>OpenCvSharp.CPlusPlus</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="OpenCvSharp.CPlusPlus.Detail\Blender.cs" />
@@ -107,6 +110,9 @@
     <Compile Include="OpenCvSharp.CPlusPlus\ColorMapMode.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\CppConst.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\Cv2.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Cv2Ext\ConnectedComponents.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Cv2Ext\ConnectedComponentsTypes.cs" />
+    <Compile Include="OpenCvSharp.CPlusPlus\Cv2Ext\Cv2_imgproc.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\CvAdaptiveSkinDetector.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\CvANN_MLP.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\CvANN_MLP_TrainParams.cs" />
@@ -313,6 +319,7 @@
     <Compile Include="OpenCvSharp.CPlusPlus\WCvDTreeSplit.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\WCvSVMParams.cs" />
     <Compile Include="OpenCvSharp.CPlusPlus\Window.cs" />
+    <Compile Include="PInvoke\NativeMethods_imgproc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -323,6 +330,9 @@
       <Project>{4c2356b8-1a1e-4f92-a51c-a49ca116867f}</Project>
       <Name>OpenCvSharp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -223,8 +223,9 @@ namespace OpenCvSharp
         {
             //IntPtr libraryHandle = IntPtr.Zero;
             var platformName = GetPlatformName(processArchInfo.Architecture);
-            var expectedDllDirectory = Path.Combine(
-                Path.Combine(baseDirectory, DllDirectory), platformName);
+            var expectedDllDirectory =Path.Combine(baseDirectory, platformName);
+                //Path.Combine(
+               // Path.Combine(baseDirectory, DllDirectory), platformName);
             //var fileName = FixUpDllFileName(Path.Combine(expectedDllDirectory, dllName));
 
             return LoadLibraryRaw(dllName, expectedDllDirectory);

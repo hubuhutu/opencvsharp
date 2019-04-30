@@ -11,7 +11,7 @@ using System.Text;
 namespace OpenCvSharp.CPlusPlus
 {
 	[SuppressUnmanagedCodeSecurity]
-	public static class NativeMethods
+	public static partial class NativeMethods
 	{
 		private static bool tried;
 

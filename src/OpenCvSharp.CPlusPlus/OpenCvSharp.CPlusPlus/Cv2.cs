@@ -6,7 +6,7 @@ using System.Text;
 
 namespace OpenCvSharp.CPlusPlus
 {
-    public static class Cv2
+    public static partial class Cv2
     {
         public const int GC_BGD = 0;
 

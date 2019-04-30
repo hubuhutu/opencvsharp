@@ -552,5 +552,14 @@ namespace OpenCvSharp.CPlusPlus
 			}
 			return false;
 		}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Vec3b ToVec3b()
+        {
+            return new Vec3b((byte)Val0, (byte)Val1, (byte)Val2);
+        }
 	}
 }
